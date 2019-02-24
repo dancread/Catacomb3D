@@ -372,7 +372,7 @@ void PollControls (void)
 	}
 	else
 	{
-		if (Keyboard[sc_RShift])
+		if (Keyboard[sc_RShift] || Keyboard[sc_LShift])
 			running = true;
 		else
 			running = false;

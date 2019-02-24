@@ -125,8 +125,8 @@ static  char            *BottomS1,*BottomS2,*BottomS3;
 static  UComm           Communication;
 static  ScanCode        *KeyMaps[] =
 					{
-						&KbdDefs[0].button0,
-						&KbdDefs[0].button1,
+						&KbdDefs[0].button0, // Fire
+						&KbdDefs[0].button1, // Heal
 						&firescan,
 						&KbdDefs[0].up,
 						&KbdDefs[0].right,
@@ -239,7 +239,7 @@ static  boolean USL_ConfigCustom(UserCall call,struct UserItem far *item),
 #endif
 #ifdef  CAT3D
 		{DefButton(sc_J,"FIRE")},
-		{DefButton(sc_P,"STRAFE")},
+		{DefButton(sc_P,"HEAL")},
 #endif
 #ifdef  CPD
 		{DefButton(sc_J,"SHOOT")},

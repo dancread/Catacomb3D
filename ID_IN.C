@@ -52,7 +52,9 @@
 		boolean		Paused;
 		char		LastASCII;
 		ScanCode	LastScan;
-		KeyboardDef	KbdDefs[MaxKbds] = {{0x1d,0x38,0x47,0x48,0x49,0x4b}};
+		// Fire, Heal, Up, Down, Strafe Left, Strafe Right
+		// Ctrl, H, W, A, S, D,
+		KeyboardDef	KbdDefs[MaxKbds] = {{sc_Control,0x23,sc_W, sc_A, sc_D, sc_S}};
 		JoystickDef	JoyDefs[MaxJoys];
 		ControlType	Controls[MaxPlayers];
 

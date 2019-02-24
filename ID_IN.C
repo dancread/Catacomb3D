@@ -52,7 +52,7 @@
 		boolean		Paused;
 		char		LastASCII;
 		ScanCode	LastScan;
-		KeyboardDef	KbdDefs[MaxKbds] = {{0x1d,0x38,0x47,0x48,0x49,0x4b,0x4d,0x4f,0x50,0x51}};
+		KeyboardDef	KbdDefs[MaxKbds] = {{0x1d,0x38,0x47,0x48,0x49,0x4b}};
 		JoystickDef	JoyDefs[MaxJoys];
 		ControlType	Controls[MaxPlayers];
 
@@ -784,15 +784,6 @@ register	KeyboardDef	*def;
 		case ctrl_Keyboard1:
 		case ctrl_Keyboard2:
 			def = &KbdDefs[type - ctrl_Keyboard];
-
-			if (Keyboard[def->upleft])
-				mx = motion_Left,my = motion_Up;
-			else if (Keyboard[def->upright])
-				mx = motion_Right,my = motion_Up;
-			else if (Keyboard[def->downleft])
-				mx = motion_Left,my = motion_Down;
-			else if (Keyboard[def->downright])
-				mx = motion_Right,my = motion_Down;
 
 			if (Keyboard[def->up])
 				my = motion_Up;

@@ -151,9 +151,10 @@ typedef	struct		{
 typedef	CursorInfo	ControlInfo;
 typedef	struct		{
 						ScanCode	button0,button1,
-									upleft,		up,		upright,
-									left,				right,
-									downleft,	down,	downright;
+									up,
+									left,
+									right,
+									down;
 					} KeyboardDef;
 typedef	struct		{
 						word		joyMinX,joyMinY,

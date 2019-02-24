@@ -128,13 +128,9 @@ static  ScanCode        *KeyMaps[] =
 						&KbdDefs[0].button0,
 						&KbdDefs[0].button1,
 						&firescan,
-						&KbdDefs[0].upleft,
 						&KbdDefs[0].up,
-						&KbdDefs[0].upright,
 						&KbdDefs[0].right,
-						&KbdDefs[0].downright,
 						&KbdDefs[0].down,
-						&KbdDefs[0].downleft,
 						&KbdDefs[0].left
 					};
 
@@ -227,14 +223,10 @@ static  boolean USL_ConfigCustom(UserCall call,struct UserItem far *item),
 	// Keyboard menu
 	UserItem far keyi[] =
 	{
-		{DefButton(sc_None,"UP & LEFT")},
 		{DefButton(sc_None,"UP")},
-		{DefButton(sc_None,"UP & RIGHT")},
-		{DefButton(sc_None,"RIGHT")},
-		{DefButton(sc_None,"DOWN & RIGHT")},
+		{DefButton(sc_None,"STRAFE RIGHT")},
 		{DefButton(sc_None,"DOWN")},
-		{DefButton(sc_None,"DOWN & LEFT")},
-		{DefButton(sc_None,"LEFT")},
+		{DefButton(sc_None,"STRAFE LEFT")},
 		{uii_Bad}
 	};
 	UserItemGroup   far keygroup = {0,0,CP_KEYMOVEMENTPIC,sc_None,keyi,USL_KeyCustom};

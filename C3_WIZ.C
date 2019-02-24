@@ -1836,7 +1836,37 @@ void ControlMovement (objtype *ob)
 	long	speed;
 
 
-	if (c.button1)
+	if(mousexmove)
+	{
+	//
+	// not strafing
+	//
+
+		//
+		// turning
+		//
+		if (c.xaxis == 1)
+		{
+			ob->angle -= tics;
+			if (running)				// fast turn
+				ob->angle -= tics;
+		}
+		else if (c.xaxis == -1)
+		{
+			ob->angle+= tics;
+			if (running)				// fast turn
+				ob->angle += tics;
+		}
+
+		ob->angle -= (mousexmove/10);
+
+		if (ob->angle >= ANGLES)
+			ob->angle -= ANGLES;
+		if (ob->angle < 0)
+			ob->angle += ANGLES;
+
+	}
+  else
 	{
 	//
 	// strafing
@@ -1884,36 +1914,6 @@ void ControlMovement (objtype *ob)
 				angle += ANGLES;
 			Thrust (angle,-speed);				// move to right
 		}
-	}
-	else
-	{
-	//
-	// not strafing
-	//
-
-		//
-		// turning
-		//
-		if (c.xaxis == 1)
-		{
-			ob->angle -= tics;
-			if (running)				// fast turn
-				ob->angle -= tics;
-		}
-		else if (c.xaxis == -1)
-		{
-			ob->angle+= tics;
-			if (running)				// fast turn
-				ob->angle += tics;
-		}
-
-		ob->angle -= (mousexmove/10);
-
-		if (ob->angle >= ANGLES)
-			ob->angle -= ANGLES;
-		if (ob->angle < 0)
-			ob->angle += ANGLES;
-
 	}
 
 	//

@@ -350,7 +350,7 @@ void PollControls (void)
 		buttons = _BX;
 		Mouse(MDelta);
 		mousexmove = _CX;
-		mouseymove = _DX;
+		//mouseymove = _DX;
 
 		if (buttons&1)
 			c.button0 = 1;
